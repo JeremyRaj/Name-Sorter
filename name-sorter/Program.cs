@@ -36,7 +36,10 @@ namespace name_sorter
 
             // use a factory. We can extend the factory to support sending to other outputs if required.Open/Closed principal
             var output = new OutputFactory(fileProcessor);
-            output.GetWriters().WriteData(sortedList);
+            foreach (var writers in output.GetWriters())
+            {
+                writers.WriteData(sortedList);
+            }
         }
     }
 }

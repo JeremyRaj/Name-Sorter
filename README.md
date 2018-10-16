@@ -3,7 +3,8 @@ Given a set of names, the app order the set first by last name, then by any give
 
 # Getting Started
 To run the console application, clone the repository.  Run name-sorter.exe in Command Prompt
-Eg: name-sorter.exe "<<path to your unsorted list>>"
+Eg: name-sorter.exe "path to your unsorted list"
+Results will be saved in sorted-names-list.txt in parent directory
 ![Screenshot](readmeimages/cmd.png)
 
 # Framework and Nuget packages used
@@ -15,14 +16,10 @@ Eg: name-sorter.exe "<<path to your unsorted list>>"
 - NSUbstitute
 
 # Build & CI - Azure DevOps
-
 Build shown in Azure DevOps portal
-![Screenshot](readmeimages/cmd.png)
-
+![Screenshot](readmeimages/build.png)S
 Test results shown in Azure DevOps portal
-![Screenshot](readmeimages/cmd.png)
-
-
+![Screenshot](readmeimages/testS.png)
 
 Authors
 Jeremy Jaya Raj
