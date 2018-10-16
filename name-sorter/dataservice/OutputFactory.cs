@@ -1,23 +1,21 @@
-﻿using name_sorter.dataservice;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace name_sorter.dataservice
+﻿namespace name_sorter.dataservice
 {
     public class OutputFactory
     {
-        private readonly string _outputFileLocation;
-        public OutputFactory(string fileLocation)
+        private IFileProcessor _fileProcessor;
+        public OutputFactory(IFileProcessor fileProcessor)
         {
-            _outputFileLocation = fileLocation;
+            _fileProcessor = fileProcessor;
         }
+
+        /// <summary>
+        /// Factory to get all types of output writers.
+        /// </summary>
+        /// <returns></returns>
         public virtual IDataWriter GetWriters()
         {
             IDataWriter dataWriter = null;
-            dataWriter = new FileWriter(_outputFileLocation);
+            dataWriter = new FileWriter(_fileProcessor);
             dataWriter = new ScreenWriter();
             return dataWriter;
         }

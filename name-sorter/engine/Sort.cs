@@ -1,10 +1,7 @@
 ﻿using CuttingEdge.Conditions;
 using name_sorter.model;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace name_sorter.engine
 {
@@ -35,17 +32,18 @@ namespace name_sorter.engine
                     }
                 }
 
-                // lets remove extra whitespaces
+                // lets remove extra whitespaces so we have a clean string
                 var givenName = name.GivenName.Split(' ').Where(s => !string.IsNullOrWhiteSpace(s));
                 name.GivenName = string.Join(" ", givenName);
 
                 reversedList.Add(name);
             }
 
+            // need to order by as per requirement
             var sortedList = reversedList.OrderBy(s => s.LastName).ThenBy(s => s.GivenName)
                 .Select(i => (i.GivenName + " " + i.LastName).ToString()).ToArray();
 
-
+            // return final list
             return sortedList;
         }
     }

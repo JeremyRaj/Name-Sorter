@@ -18,8 +18,8 @@ namespace name_sorter_test
         {
 
             this._fileProcessor = Substitute.For<IFileProcessor>();
-            this._fileProcessor.GetFileContents("dummyLocation").Returns(mockNames());
-            this._fileReader = new FileReader("dummyLocation", this._fileProcessor);
+            this._fileProcessor.GetFileContents().Returns(mockNames());
+            this._fileReader = new FileReader(this._fileProcessor);
         }
 
         [Test]
@@ -42,8 +42,9 @@ namespace name_sorter_test
         {
             // act
             string[] nullData = null;
-            this._fileProcessor.GetFileContents("dummyLocation").Returns(nullData);
-            this._fileReader = new FileReader("dummyLocation", this._fileProcessor);
+
+            this._fileProcessor.GetFileContents().Returns(nullData);
+            this._fileReader = new FileReader(this._fileProcessor);
             //assert
             Assert.Throws<ArgumentNullException>(() => this._fileReader.GetData());
         }

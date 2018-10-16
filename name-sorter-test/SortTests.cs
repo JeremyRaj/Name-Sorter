@@ -10,41 +10,23 @@ namespace name_sorter_test
     [TestFixture]
     public class SortTests
     {
-        private List<string> inputMockData = new List<string>();
-        private List<string> expectedOutputData = new List<string>();
         private Sort _sortEngine;
 
         [SetUp]
         public void Setup()
         {
-            this.inputMockData.Add("Orson Milka Iddins");
-            this.inputMockData.Add("Erna Dorey Battelle");
-            this.inputMockData.Add("Flori Chaunce Franzel");
-            this.inputMockData.Add("Odetta Sue Kaspar");
-            this.inputMockData.Add("Roy Ketti Kopfen");
-            this.inputMockData.Add("Madel Bordie Mapplebeck");
-            this.inputMockData.Add("Selle Bellison");
-            this.inputMockData.Add("Leonerd Adda Mitchell Monaghan");
-            this.inputMockData.Add("Debra Micheli");
-            this.inputMockData.Add("Hailey Avie Annakin");
-
-            this.expectedOutputData.Add("Hailey Avie Annakin");
-            this.expectedOutputData.Add("Erna Dorey Battelle");
-            this.expectedOutputData.Add("Selle Bellison");
-            this.expectedOutputData.Add("Flori Chaunce Franzel");
-            this.expectedOutputData.Add("Orson Milka Iddins");
-            this.expectedOutputData.Add("Odetta Sue Kaspar");
-            this.expectedOutputData.Add("Roy Ketti Kopfen");
-            this.expectedOutputData.Add("Madel Bordie Mapplebeck");
-            this.expectedOutputData.Add("Debra Micheli");
-            this.expectedOutputData.Add("Leonerd Adda Mitchell Monaghan");
-
             this._sortEngine = new Sort();
-            //this.searchIndexProver.HasAccessToCloudSearch("license1", "deployment1").Returns(true);
-            //this.searchClient = Substitute.For<ISearchClient>();
+        }
 
-            //this.searchController = new SearchController(this.searchIndexProver, this.searchClient);
-            //this.searchController.Request = new HttpRequestMessage(HttpMethod.Get, "http://google.com");
+        [Test]
+        public void InputOutput_ShouldBe_SameLength()
+        {
+            // act
+            char[] delimiters = new char[] { ' ' };
+            var results = this._sortEngine.GetSortedData(mockData(), delimiters);
+
+            // assert
+            results.Length.Should().Equals(mockData().Count);
         }
 
         [Test]
@@ -52,7 +34,7 @@ namespace name_sorter_test
         {
             // act
             char[] delimiters = new char[] { ' ' };
-            var results = this._sortEngine.GetSortedData(this.inputMockData, delimiters);
+            var results = this._sortEngine.GetSortedData(mockData(), delimiters);
 
             // assert
             results[0].Should().BeEquivalentTo("Hailey Avie Annakin");
@@ -73,7 +55,24 @@ namespace name_sorter_test
         public void PassNullDelimiter_ShouldThrow_ArgumentNullException()
         {
             //assert
-            Assert.Throws<ArgumentNullException>(() => this._sortEngine.GetSortedData(this.inputMockData, null));
+            Assert.Throws<ArgumentNullException>(() => this._sortEngine.GetSortedData(mockData(), null));
+        }
+
+        private List<string> mockData()
+        {
+            List<string> inputMockData = new List<string>();
+            inputMockData.Add("Orson Milka Iddins");
+            inputMockData.Add("Erna Dorey Battelle");
+            inputMockData.Add("Flori Chaunce Franzel");
+            inputMockData.Add("Odetta Sue Kaspar");
+            inputMockData.Add("Roy Ketti Kopfen");
+            inputMockData.Add("Madel Bordie Mapplebeck");
+            inputMockData.Add("Selle Bellison");
+            inputMockData.Add("Leonerd Adda Mitchell Monaghan");
+            inputMockData.Add("Debra Micheli");
+            inputMockData.Add("Hailey Avie Annakin");
+
+            return inputMockData;
         }
 
     }

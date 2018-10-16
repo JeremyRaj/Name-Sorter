@@ -1,22 +1,45 @@
-﻿using CuttingEdge.Conditions;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace name_sorter.dataservice
 {
     public class FileProcessor : IFileProcessor
     {
-        public string[] GetFileContents(string fileLocation)
+        private string _inputFileLocation;
+        private string _outputFileLocation;
+        public FileProcessor(string inputFileLocation, string outputFileLocation)
         {
-            Condition.Requires(fileLocation, "fileLocation").IsNotNullOrEmpty();
+            _inputFileLocation = inputFileLocation;
+            _outputFileLocation = outputFileLocation;
+        }
+        public string[] GetFileContents()
+        {
+            try
+            {
+                var contents = File.ReadAllLines(_inputFileLocation);
 
-            var contents = File.ReadAllLines(fileLocation);
-           
-            return contents;
+                return contents;
+            }
+            catch(Exception ex)
+            {
+                //to do logging and better error handling
+                Console.WriteLine(ex.Message);
+            }
+
+            return null;
+        }
+
+        public void WriteFileContents(string[] dataToWrite)
+        {
+            try
+            {
+                File.WriteAllLines(_outputFileLocation, dataToWrite);
+            }
+            catch (Exception ex)
+            {
+                // to do logging
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

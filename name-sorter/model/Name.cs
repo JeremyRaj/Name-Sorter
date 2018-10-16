@@ -8,13 +8,18 @@ namespace name_sorter.model
 {
     public class Name
     {
+        /// <summary>
+        /// Given Name
+        /// </summary>
         public string GivenName    // the FirstName property
         {
             get;
             set;
         }
         
-
+        /// <summary>
+        /// Last Name
+        /// </summary>
         public string LastName    // the LastName property
         {
             get;
