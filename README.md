@@ -19,7 +19,7 @@ Results will be saved in sorted-names-list.txt in parent directory
 
 # Build & CI - Azure DevOps
 Build shown in Azure DevOps portal
-![Screenshot](readmeimages/build.png)S
+![Screenshot](readmeimages/build.png)
 Test results shown in Azure DevOps portal
 ![Screenshot](readmeimages/test.png)
 
