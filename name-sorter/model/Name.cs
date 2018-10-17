@@ -11,7 +11,7 @@ namespace name_sorter.model
         /// <summary>
         /// Given Name
         /// </summary>
-        public string GivenName    // the FirstName property
+        public string GivenName
         {
             get;
             set;
@@ -20,7 +20,7 @@ namespace name_sorter.model
         /// <summary>
         /// Last Name
         /// </summary>
-        public string LastName    // the LastName property
+        public string LastName
         {
             get;
             set;

@@ -32,7 +32,7 @@ namespace name_sorter.engine
                     }
                 }
 
-                // lets remove extra whitespaces so we have a clean string
+                // lets remove extra whitespaces(trim) so we have a clean string
                 if (!string.IsNullOrEmpty(name.GivenName))
                 {
                     var givenName = name.GivenName.Split(' ').Where(s => !string.IsNullOrWhiteSpace(s));

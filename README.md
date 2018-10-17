@@ -1,10 +1,10 @@
 # Name-Sorter
-Given a set of names, the app order the set first by last name, then by any given names the person may have. A name must have at least 1 given name and may have up to 3 given names.
+Given a set of names, the app orders the set first by last name, then by any given names the person may have. A name must have at least 1 given name and may have up to 3 given names.
 
 # Getting Started
-To run the console application, clone the repository.  Run name-sorter.exe in Command Prompt
+To run the console application, clone the repository.  Run name-sorter.exe in Command Prompt <br />
 Eg: name-sorter ./unsorted-names-list.txt <br />
-*Note: Please ensure the unsorted-names-list.txt file exist in the working directory
+`Note: Please ensure the unsorted-names-list.txt file exist in the working directory`
 
 ![Screenshot](readmeimages/cmd.png)
 

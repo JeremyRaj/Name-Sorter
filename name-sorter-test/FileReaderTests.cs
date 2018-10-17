@@ -16,7 +16,6 @@ namespace name_sorter_test
         [SetUp]
         public void Setup()
         {
-
             this._fileProcessor = Substitute.For<IFileProcessor>();
             this._fileProcessor.GetFileContents().Returns(mockNames());
             this._fileReader = new FileReader(this._fileProcessor);
