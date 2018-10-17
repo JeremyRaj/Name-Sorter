@@ -39,9 +39,9 @@ namespace name_sorter_test
         [Test]
         public void FileLocationNull_ShouldThrow_ArgumentNullException()
         {
-            // act
+            //arrange
             string[] nullData = null;
-
+            //act
             this._fileProcessor.GetFileContents().Returns(nullData);
             this._fileReader = new FileReader(this._fileProcessor);
             //assert

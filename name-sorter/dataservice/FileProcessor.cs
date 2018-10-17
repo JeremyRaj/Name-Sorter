@@ -22,7 +22,7 @@ namespace name_sorter.dataservice
             }
             catch(Exception ex)
             {
-                //to do logging and better error handling
+                //to do logging
                 Console.WriteLine(ex.Message);
             }
 
