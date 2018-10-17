@@ -3,14 +3,14 @@ Given a set of names, the app orders the set first by last name, then by any giv
 
 # Getting Started
 To run the console application, clone the repository.  Run name-sorter.exe in Command Prompt <br />
-Eg: name-sorter ./unsorted-names-list.txt <br />
+`eg: name-sorter ./unsorted-names-list.txt` <br />
 `Note: Please ensure the unsorted-names-list.txt file exist in the working directory`
 
 ![Screenshot](readmeimages/cmd.png)
 
 Results will be saved in sorted-names-list.txt in the working directory.
 
-# Framework and Nuget packages used
+# Framework and Nuget packages
 - Visual Studio 2017 .NET Framework 4.6.1
 - CuttingEdge.Conditions
 - Newtonsoft.Json
@@ -20,7 +20,7 @@ Results will be saved in sorted-names-list.txt in the working directory.
 
 # High Level Architecture
 ![Screenshot](readmeimages/diagram.png)
-The core of the system is the sorter Engine. It reads data from the file, routes the data to the engine and outputs the sorted data to the console window and file.
+The core of the system is the sorter Engine. It reads data from the file, executes the sorting routine and outputs the sorted data to the console window and file.
 
 # Build & CI - Azure DevOps
 Build shown in Azure DevOps portal
@@ -40,4 +40,4 @@ Email notification for successful build
 # Authors
 Jeremy Jaya Raj <br />
 LinkedIn: https://www.linkedin.com/in/jeremyjayaraj/ <br />
-jeremy.jayaraj@outlook.com
+Email: jeremy.jayaraj@outlook.com
