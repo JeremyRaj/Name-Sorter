@@ -3,12 +3,12 @@ Given a set of names, the app order the set first by last name, then by any give
 
 # Getting Started
 To run the console application, clone the repository.  Run name-sorter.exe in Command Prompt
-Eg: name-sorter ./unsorted-names-list.txt
+Eg: name-sorter ./unsorted-names-list.txt <br />
 *Note: Please ensure the unsorted-names-list.txt file exist in the working directory
 
 ![Screenshot](readmeimages/cmd.png)
 
-Results will be saved in sorted-names-list.txt in the working directory
+Results will be saved in sorted-names-list.txt in the working directory.
 
 # Framework and Nuget packages used
 - Visual Studio 2017 .NET Framework 4.6.1
@@ -27,16 +27,17 @@ Build shown in Azure DevOps portal
 ![Screenshot](readmeimages/build.png)
 Test results shown in Azure DevOps portal
 ![Screenshot](readmeimages/test.png)
-Email for successful build
+Email notification for successful build
+![Screenshot](readmeimages/email.png)
 
 # Future Improvements
 - Add new data readers.Create new DBReader class and implement IDataReader. Eg: database table
 - Add new data writer. Create new DBWriter class and implement IDataWriter Eg: write to database.
-- Add new DBWRiter to OutputFactory (GetWriters() method) to write to DB.
+- Add new DBWriter to OutputFactory (GetWriters() method) to write to DB.
 - Add logging service
 - Add more unit tests.
 
 # Authors
-Jeremy Jaya Raj
-LinkedIn: https://www.linkedin.com/in/jeremyjayaraj/
+Jeremy Jaya Raj <br />
+LinkedIn: https://www.linkedin.com/in/jeremyjayaraj/ <br />
 jeremy.jayaraj@outlook.com
