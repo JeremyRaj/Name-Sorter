@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace name_sorter.engine
 {
-    public class Sort : ISort
+    public class Sorter : ISorter
     {
         public string[] GetSortedData(List<string> dataToSort, char[] delimiters)
         {
@@ -33,16 +33,19 @@ namespace name_sorter.engine
                 }
 
                 // lets remove extra whitespaces so we have a clean string
-                var givenName = name.GivenName.Split(' ').Where(s => !string.IsNullOrWhiteSpace(s));
-                name.GivenName = string.Join(" ", givenName);
+                if (!string.IsNullOrEmpty(name.GivenName))
+                {
+                    var givenName = name.GivenName.Split(' ').Where(s => !string.IsNullOrWhiteSpace(s));
+                    name.GivenName = string.Join(" ", givenName).Trim();
+                }
 
                 reversedList.Add(name);
             }
 
             // need to order by as per requirement
             var sortedList = reversedList.OrderBy(s => s.LastName).ThenBy(s => s.GivenName)
-                .Select(i => (i.GivenName + " " + i.LastName).ToString()).ToArray();
-
+                .Select(i => (i.GivenName + " " + i.LastName).ToString().Trim()).ToArray();
+            
             // return final list
             return sortedList;
         }

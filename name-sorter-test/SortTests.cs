@@ -10,12 +10,12 @@ namespace name_sorter_test
     [TestFixture]
     public class SortTests
     {
-        private Sort _sortEngine;
+        private Sorter _sortEngine;
 
         [SetUp]
         public void Setup()
         {
-            this._sortEngine = new Sort();
+            this._sortEngine = new Sorter();
         }
 
         [Test]
@@ -56,6 +56,34 @@ namespace name_sorter_test
         {
             //assert
             Assert.Throws<ArgumentNullException>(() => this._sortEngine.GetSortedData(mockData(), null));
+        }
+
+        [Test]
+        public void PassOneGivenNameCollection_ShouldSort_Asc()
+        {
+            char[] delimiters = new char[] { ' ' };
+            List<string> singleNameCollection = new List<string>();
+            singleNameCollection.Add("John Jeremy");
+            singleNameCollection.Add("Adam David");
+            var results = this._sortEngine.GetSortedData(singleNameCollection, delimiters);
+
+            // assert
+            results[0].Should().BeEquivalentTo("Adam David");
+            results[1].Should().BeEquivalentTo("John Jeremy");
+        }
+
+        [Test]
+        public void PassOneNameCollection_ShouldSort_Asc()
+        {
+            char[] delimiters = new char[] { ' ' };
+            List<string> singleNameCollection = new List<string>();
+            singleNameCollection.Add("Jeremy");
+            singleNameCollection.Add("David");
+            var results = this._sortEngine.GetSortedData(singleNameCollection, delimiters);
+
+            // assert
+            results[0].Should().BeEquivalentTo("David");
+            results[1].Should().BeEquivalentTo("Jeremy");
         }
 
         private List<string> mockData()

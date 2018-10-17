@@ -56,8 +56,8 @@
     <Compile Include="dataservice\IFileProcessor.cs" />
     <Compile Include="dataservice\OutputFactory.cs" />
     <Compile Include="dataservice\ScreenWriter.cs" />
-    <Compile Include="engine\ISort.cs" />
-    <Compile Include="engine\Sort.cs" />
+    <Compile Include="engine\ISorter.cs" />
+    <Compile Include="engine\Sorter.cs" />
     <Compile Include="model\Name.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

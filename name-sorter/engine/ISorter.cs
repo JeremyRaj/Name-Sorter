@@ -2,7 +2,7 @@
 
 namespace name_sorter.engine
 {
-    interface ISort
+    interface ISorter
     {
         string[] GetSortedData(List<string> dataToSort, char[] delimiters);
     }

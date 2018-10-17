@@ -3,11 +3,12 @@ Given a set of names, the app order the set first by last name, then by any give
 
 # Getting Started
 To run the console application, clone the repository.  Run name-sorter.exe in Command Prompt
-Eg: name-sorter.exe "path to your unsorted list"
+Eg: name-sorter ./unsorted-names-list.txt
+*Note: Please ensure the unsorted-names-list.txt file exist in the working directory
 
 ![Screenshot](readmeimages/cmd.png)
 
-Results will be saved in sorted-names-list.txt in parent directory
+Results will be saved in sorted-names-list.txt in the working directory
 
 # Framework and Nuget packages used
 - Visual Studio 2017 .NET Framework 4.6.1
@@ -17,11 +18,25 @@ Results will be saved in sorted-names-list.txt in parent directory
 - NUnit
 - NSUbstitute
 
+# High Level Architecture
+![Screenshot](readmeimages/diagram.png)
+The core of the system is the sorter Engine. It reads data from the file, routes the data to the engine and outputs the sorted data to the console window and file.
+
 # Build & CI - Azure DevOps
 Build shown in Azure DevOps portal
 ![Screenshot](readmeimages/build.png)
 Test results shown in Azure DevOps portal
 ![Screenshot](readmeimages/test.png)
+Email for successful build
 
-Authors
+# Future Improvements
+- Add new data readers.Create new DBReader class and implement IDataReader. Eg: database table
+- Add new data writer. Create new DBWriter class and implement IDataWriter Eg: write to database.
+- Add new DBWRiter to OutputFactory (GetWriters() method) to write to DB.
+- Add logging service
+- Add more unit tests.
+
+# Authors
 Jeremy Jaya Raj
+LinkedIn: https://www.linkedin.com/in/jeremyjayaraj/
+jeremy.jayaraj@outlook.com
