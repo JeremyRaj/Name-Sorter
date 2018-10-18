@@ -23,6 +23,7 @@ Results will be saved in sorted-names-list.txt in the working directory.
 The core of the system is the sorter Engine. It reads data from the file, executes the sorting routine and outputs the sorted data to the console window and file.
 
 # Build & CI - Azure DevOps
+Build Status : [![Build Status](https://dev.azure.com/jeremyjayaraj/name-sorter/_apis/build/status/JeremyRaj.Name-Sorter)](https://dev.azure.com/jeremyjayaraj/name-sorter/_build/latest?definitionId=1)
 Build shown in Azure DevOps portal
 ![Screenshot](readmeimages/build.png)
 Test results shown in Azure DevOps portal
