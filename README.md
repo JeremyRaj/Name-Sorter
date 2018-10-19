@@ -3,7 +3,7 @@
 Given a set of names, the app orders the set first by last name, then by any given names the person may have. A name must have at least 1 given name and may have up to 3 given names.
 
 # Getting Started
-Download the artifacts from a successful [Build](https://dev.azure.com/jeremyjayaraj/name-sorter/_build?definitionId=1)
+Download the artifacts from a successful [Build](https://dev.azure.com/jeremyjayaraj/name-sorter/_build?definitionId=1) drop folder.
 
 ![Screenshot](readmeimages/artifacts.png)
 
