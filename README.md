@@ -3,7 +3,8 @@
 Given a set of names, the app orders the set first by last name, then by any given names the person may have. A name must have at least 1 given name and may have up to 3 given names.
 
 # Getting Started
-Download the artifacts from a successful build [Build](https://dev.azure.com/jeremyjayaraj/name-sorter/_build?definitionId=1)
+Download the artifacts from a successful [Build](https://dev.azure.com/jeremyjayaraj/name-sorter/_build?definitionId=1)
+
 ![Screenshot](readmeimages/artifacts.png)
 
 To run the console application, open the downloaded artifacts folder, Run name-sorter.exe in Command Prompt <br />
