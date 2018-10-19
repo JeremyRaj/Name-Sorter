@@ -31,7 +31,7 @@ steps:
     configuration: '$(buildConfiguration)'
  
  - task: CopyFiles@2
-  inputs:
+   inputs:
     contents: '**\bin\**' 
     targetFolder: '$(Build.ArtifactStagingDirectory)'
     
