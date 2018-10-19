@@ -32,12 +32,8 @@ steps:
  
  - task: CopyFiles@2
   inputs:
-    #sourceFolder: # Optional
     contents: '**\bin\**' 
-    targetFolder: $(Build.ArtifactStagingDirectory)
-    #cleanTargetFolder: false # Optional
-    #overWrite: false # Optional
-    #flattenFolders: false # Optional
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
     
 - task: PublishBuildArtifacts@1
   inputs:
